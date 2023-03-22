@@ -1,0 +1,19 @@
+[remap]
+
+importer="texture_atlas"
+type="Texture"
+path="res://.import/00Atlas.png-2ec2bdd540ac4a0b3e3e85d1fe5b04d5.res"
+group_file="res://assets/tilesets/oisougabo_platformer_desert/Tileset/Atlas.png"
+valid=true
+[deps]
+
+
+source_file="res://assets/tilesets/oisougabo_platformer_desert/Tileset/00Atlas.png"
+dest_files=[ "res://.import/00Atlas.png-2ec2bdd540ac4a0b3e3e85d1fe5b04d5.res" ]
+
+[params]
+
+atlas_file="res://assets/tilesets/oisougabo_platformer_desert/Tileset/Atlas.png"
+import_mode=0
+crop_to_region=false
+trim_alpha_border_from_region=true
