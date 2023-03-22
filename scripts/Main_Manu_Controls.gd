@@ -18,10 +18,9 @@ func _ready():
 
 func _on_StartButton_pressed():
 	# Load your first game scene
-	#var game_scene = load("res://path/to/your/first_game_scene.tscn")
+	var level_one_scene = load("res://scenes/GameLevels/Level_One.tscn")
 	# Replace the main menu scene with the game scene
-	#get_tree().change_scene_to(game_scene)
-	pass # Replace with function body.
+	get_tree().change_scene_to(level_one_scene)
 
 
 func _on_QuitButton_pressed():
