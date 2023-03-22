@@ -26,3 +26,8 @@ func _on_StartButton_pressed():
 func _on_QuitButton_pressed():
 	# Quit the game
 	get_tree().quit()
+
+
+func _on_DebugButton_pressed():
+	Global.show_debug_hud = !Global.show_debug_hud
+

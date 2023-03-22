@@ -1,5 +1,7 @@
 extends Node
 
+var show_debug_hud = false
+
 func _ready():
 	# Make this node persistent across scenes
 	set_process_unhandled_input(true)
