@@ -9,11 +9,6 @@ var is_idle = true
 func _ready():
 	$AnimationPlayer.play("Idle");
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _physics_process(_delta):
 	# If moving swap animation
 	# If moving right play the animation

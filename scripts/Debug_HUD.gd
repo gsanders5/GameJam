@@ -20,7 +20,10 @@ func _unhandled_input(event):
 		toggle_fullscreen()
 	if event.is_action_pressed("quit_game"):
 		get_tree().quit()
-
+	if event.is_action_pressed("restart_level"):
+		var level_one_scene = load("res://scenes/GameLevels/Level_One.tscn")
+		get_tree().change_scene_to(level_one_scene)
+		
 func toggle_fullscreen():
 		# Toggle full-screen mode
 		var is_fullscreen = OS.window_fullscreen

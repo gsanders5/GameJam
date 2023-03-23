@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/sounds/blenderfoundation-grass-walk.mp3" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=6]
-radius = 2.28572
+radius = 0.857143
 height = 18.2857
 
 [sub_resource type="Animation" id=2]
