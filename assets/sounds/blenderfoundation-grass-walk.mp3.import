@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/blenderfoundation-grass-walk.mp3-a43e5e8ee22a6e31239bba1d09b19494.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/blenderfoundation-grass-walk.mp3"
+dest_files=[ "res://.import/blenderfoundation-grass-walk.mp3-a43e5e8ee22a6e31239bba1d09b19494.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

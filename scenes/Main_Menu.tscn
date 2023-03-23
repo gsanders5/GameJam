@@ -12,6 +12,10 @@ __meta__ = {
 "_edit_vertical_guides_": [ 540.0 ]
 }
 
+[node name="Global" parent="." instance=ExtResource( 5 )]
+
+[node name="Debug_HUD" parent="Global" instance=ExtResource( 4 )]
+
 [node name="Control" type="Control" parent="."]
 margin_right = 1080.0
 margin_bottom = 720.0
@@ -32,8 +36,6 @@ z_index = -1
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 379.399, 1291.51, 2350.49, 1532.14 )
-
-[node name="Debug_HUD" parent="Control/BackgroundItems" instance=ExtResource( 4 )]
 
 [node name="Controls" type="VBoxContainer" parent="Control"]
 anchor_left = 0.5
@@ -65,8 +67,6 @@ margin_right = 172.0
 margin_bottom = 127.0
 text = "Toggle Debug"
 expand_icon = true
-
-[node name="Global" parent="." instance=ExtResource( 5 )]
 
 [connection signal="pressed" from="Control/Controls/StartButton" to="Control/Controls" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Control/Controls/QuitButton" to="Control/Controls" method="_on_QuitButton_pressed"]
