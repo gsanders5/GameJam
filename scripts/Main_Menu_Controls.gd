@@ -1,20 +1,8 @@
 extends VBoxContainer
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+func _process(_delta):
+	# Make this node persistent across scenes
+	set_process_unhandled_input(true)
 
 func _on_StartButton_pressed():
 	# Load your first game scene
@@ -22,12 +10,18 @@ func _on_StartButton_pressed():
 	# Replace the main menu scene with the game scene
 	get_tree().change_scene_to(level_one_scene)
 
-
 func _on_QuitButton_pressed():
 	# Quit the game
 	get_tree().quit()
 
-
 func _on_DebugButton_pressed():
 	Global.show_debug_hud = !Global.show_debug_hud
 
+func _on_ToggleFullscreenButton_pressed():
+	print("Pressed")
+	var is_fullscreen = OS.window_fullscreen
+	OS.window_fullscreen = !is_fullscreen
+
+func _unhandled_input(event):
+	if event.is_action_pressed("submit"):
+		_on_StartButton_pressed()

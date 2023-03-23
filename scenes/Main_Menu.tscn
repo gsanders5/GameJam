@@ -2,9 +2,9 @@
 
 [ext_resource path="res://assets/images/Logo.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/sky_background.png" type="Texture" id=2]
-[ext_resource path="res://scripts/Main_Manu_Controls.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Main_Menu_Controls.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Debug_HUD.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/Global.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sounds/mrpoly-menu-music-awesomeness.wav" type="AudioStream" id=5]
 
 [node name="Root" type="CanvasLayer"]
 __meta__ = {
@@ -12,9 +12,9 @@ __meta__ = {
 "_edit_vertical_guides_": [ 540.0 ]
 }
 
-[node name="Global" parent="." instance=ExtResource( 5 )]
-
-[node name="Debug_HUD" parent="Global" instance=ExtResource( 4 )]
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 
 [node name="Control" type="Control" parent="."]
 margin_right = 1080.0
@@ -42,33 +42,43 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -78.0
+margin_left = -101.0
 margin_top = 5.0
-margin_right = 69.0
-margin_bottom = 87.0
+margin_right = 111.0
+margin_bottom = 177.0
 rect_rotation = 0.0734304
 script = ExtResource( 3 )
 
 [node name="StartButton" type="Button" parent="Control/Controls"]
-margin_right = 172.0
+margin_right = 212.0
 margin_bottom = 37.0
 text = "Start Game"
 expand_icon = true
 
-[node name="QuitButton" type="Button" parent="Control/Controls"]
-margin_top = 45.0
-margin_right = 172.0
-margin_bottom = 82.0
-text = "Quit Game"
-expand_icon = true
-
 [node name="DebugButton" type="Button" parent="Control/Controls"]
-margin_top = 90.0
-margin_right = 172.0
-margin_bottom = 127.0
+margin_top = 45.0
+margin_right = 212.0
+margin_bottom = 82.0
 text = "Toggle Debug"
 expand_icon = true
 
+[node name="ToggleFullscreen" type="Button" parent="Control/Controls"]
+margin_top = 90.0
+margin_right = 212.0
+margin_bottom = 127.0
+text = "Toggle Fullscreen"
+expand_icon = true
+
+[node name="QuitButton" type="Button" parent="Control/Controls"]
+margin_top = 135.0
+margin_right = 212.0
+margin_bottom = 172.0
+text = "Quit Game"
+expand_icon = true
+
+[node name="Debug_HUD" parent="." instance=ExtResource( 4 )]
+
 [connection signal="pressed" from="Control/Controls/StartButton" to="Control/Controls" method="_on_StartButton_pressed"]
-[connection signal="pressed" from="Control/Controls/QuitButton" to="Control/Controls" method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="Control/Controls/DebugButton" to="Control/Controls" method="_on_DebugButton_pressed"]
+[connection signal="pressed" from="Control/Controls/ToggleFullscreen" to="Control/Controls" method="_on_ToggleFullscreenButton_pressed"]
+[connection signal="pressed" from="Control/Controls/QuitButton" to="Control/Controls" method="_on_QuitButton_pressed"]
