@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mrpoly-menu-music-awesomeness.wav-f9667c2b913582097d5acef1f33c07cd.sample"
+
+[deps]
+
+source_file="res://assets/sounds/mrpoly-menu-music-awesomeness.wav"
+dest_files=[ "res://.import/mrpoly-menu-music-awesomeness.wav-f9667c2b913582097d5acef1f33c07cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
