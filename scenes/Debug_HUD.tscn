@@ -9,6 +9,7 @@ __meta__ = {
 }
 
 [node name="FPSLabel" type="Label" parent="."]
+visible = false
 anchor_left = 0.89
 anchor_right = 0.89
 margin_right = 121.0

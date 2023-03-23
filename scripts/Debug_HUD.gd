@@ -9,10 +9,11 @@ func _process(_delta):
 # Update the FPSLabel text with the current FPS
 func update_debug():
 	if Global.show_debug_hud:
+		$FPSLabel.visible = true
 		var fps = str(int(Engine.get_frames_per_second()))
 		$FPSLabel.text = "FPS: " + fps
-	else:
-		$FPSLabel.text = ""
+	elif $FPSLabel.visible == true:
+		$FPSLabel.visible = false
 
 func _unhandled_input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
