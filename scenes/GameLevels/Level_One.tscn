@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=2]
+[gd_scene load_steps=90 format=2]
 
 [ext_resource path="res://assets/tilesets/oisougabo_platformer_desert/Tileset/Atlas.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Debug_HUD.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/tilesets/oisougabo_platformer_desert/Background/BG-sun.png" type="Texture" id=7]
 [ext_resource path="res://assets/tilesets/oisougabo_platformer_desert/Background/BG-mountains.png" type="Texture" id=8]
 [ext_resource path="res://assets/tilesets/LuisZuno_parallax_mountain_pack/parallax-bg-color.png" type="Texture" id=9]
+[ext_resource path="res://scenes/characters/Old_Man_NPC.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -845,4 +846,9 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="Old_Man_NPC" parent="." instance=ExtResource( 10 )]
+position = Vector2( -412, 5 )
+scale = Vector2( 1.2, 1.2 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -626, 5 )

@@ -4,12 +4,16 @@
 
 [node name="Debug_HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="FPSLabel" type="Label" parent="."]
 anchor_left = 0.89
 anchor_right = 0.89
 margin_right = 121.0
 margin_bottom = 25.0
+text = "Debug"
 __meta__ = {
 "_edit_use_anchors_": true
 }

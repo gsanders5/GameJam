@@ -46,6 +46,7 @@ margin_left = -78.0
 margin_top = 5.0
 margin_right = 69.0
 margin_bottom = 87.0
+rect_rotation = 0.0734304
 script = ExtResource( 3 )
 
 [node name="StartButton" type="Button" parent="Control/Controls"]
