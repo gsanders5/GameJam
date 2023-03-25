@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export (int) var speed = 250
-export (int) var jump_force = 550
+export (int) var jump_force = 570
 var velocity = Vector2()
 var is_idle = true
 

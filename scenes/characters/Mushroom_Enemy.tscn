@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Mushroom_Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/LazyHamsters-tiny-mushroom.png" type="Texture" id=2]
@@ -40,7 +40,10 @@ tracks/0/keys = {
 "values": [ 3, 5, 6, 7, 8, 10, 11, 12, 13, 14 ]
 }
 
-[node name="Mushroom_Enemy" type="KinematicBody2D" groups=["killplayer"]]
+[sub_resource type="CircleShape2D" id=88]
+radius = 16.0312
+
+[node name="Mushroom_Enemy" type="KinematicBody2D" groups=["enemy", "killplayer"]]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
 
@@ -66,3 +69,11 @@ frame = 3
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 86 )
 anims/Jump = SubResource( 87 )
+
+[node name="Detect_Other_Enemy" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_Other_Enemy"]
+position = Vector2( -1, 3.5 )
+shape = SubResource( 88 )
+
+[connection signal="body_entered" from="Detect_Other_Enemy" to="." method="_on_Detect_Other_Enemy_body_entered"]

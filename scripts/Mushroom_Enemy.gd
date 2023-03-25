@@ -23,3 +23,10 @@ func _physics_process(delta):
 	# Move the enemy
 	velocity.y += 20  # Apply gravity
 	move_and_slide(velocity)
+
+# If an enemy gets too close, swap movement direction.
+func _on_Detect_Other_Enemy_body_entered(body):
+	if body.is_in_group("enemy"):
+		$Sprite.flip_h=!$Sprite.flip_h
+		direction *= -1
+	pass # Replace with function body.
