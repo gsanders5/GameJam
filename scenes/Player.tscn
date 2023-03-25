@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/Archaeologist Sprite Sheet -  Elthen's Pixel Art Shop.png" type="Texture" id=2]
 [ext_resource path="res://assets/sounds/blenderfoundation-grass-walk.mp3" type="AudioStream" id=3]
+[ext_resource path="res://assets/images/youdied.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/sounds/Wilhelm-Scream.mp3" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape2D" id=6]
 radius = 0.857143
@@ -74,19 +76,10 @@ hframes = 8
 vframes = 8
 frame = 14
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." groups=["player"]]
 position = Vector2( -0.571434, 4.28571 )
 scale = Vector2( 2, 0.999999 )
 shape = SubResource( 6 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, -190 )
-current = true
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-drag_margin_left = 0.3
-drag_margin_top = 0.3
-drag_margin_bottom = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 2 )
@@ -95,6 +88,9 @@ anims/Walk_Right = SubResource( 3 )
 
 [node name="Walk_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="Wilhelm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [node name="HurtBox" type="Area2D" parent="."]
 
@@ -105,3 +101,32 @@ shape = SubResource( 5 )
 [node name="NearGround" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 0, 18 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, -190 )
+current = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_bottom = 0.0
+
+[node name="YouDied" type="TextureRect" parent="Camera2D"]
+visible = false
+margin_left = -238.0
+margin_top = -201.0
+margin_right = 243.0
+margin_bottom = 82.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera2D/YouDied"]
+margin_left = 227.143
+margin_top = 169.857
+margin_right = 339.143
+margin_bottom = 193.857
+rect_scale = Vector2( 0.2, 0.2 )
+text = "Press f1"
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_HurtBox_body_entered"]
